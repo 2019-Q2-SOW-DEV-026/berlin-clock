@@ -56,3 +56,7 @@ body {
 #fiveHourRow .light.on {
   background-color: #f33;
 }
+
+#fiveHourRow .light.off {
+  background-color: #633;
+}

@@ -47,4 +47,11 @@ describe('Berlin Clock View', () => {
         let secondsLamp = document.querySelectorAll('#fiveHourRow .light')[0];
         expect(secondsLamp.classList.contains('on')).to.be.true;
     });
+
+    it('Should turn off lamp in five hours row if its respective Berlin Clock color status is O', () => {
+        clockView.setBerlinTime('OOOOOOOOOOOOOOOOOOOOOOOO');
+
+        let secondsLamp = document.querySelectorAll('#fiveHourRow .light')[0];
+        expect(secondsLamp.classList.contains('off')).to.be.true;
+    });
 });

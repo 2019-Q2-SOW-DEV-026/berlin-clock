@@ -48,6 +48,9 @@ const ClockView = (container) => {
                 if (berlinTime[fiveHourRowIndex + 1] === Constants.LIGHT_RED) {
                     removeClass(light, 'off');
                     addClass(light, 'on');
+                }else if (berlinTime[fiveHourRowIndex + 1] === Constants.LIGHT_OFF) {
+                    removeClass(light, 'on');
+                    addClass(light, 'off');
                 }
             }
         },
