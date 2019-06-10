@@ -4,6 +4,10 @@ const ClockPresenter = (_view, _model) => {
     const clockView = _view;
     const digitalTimeModel = _model;
 
+    const isEven = (number) => {
+        return number % 2 === 0;
+    };
+
     const isInValidTime = (time) => {
         return !/^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(time);
     };
@@ -40,7 +44,7 @@ const ClockPresenter = (_view, _model) => {
         const digitalTime = digitalTimeModel.getTime();
         const seconds = digitalTime.split(':')[2];
 
-        return seconds % 2 === 0 ? Constants.LIGHT_YELLOW : Constants.LIGHT_OFF;
+        return isEven(seconds) ? Constants.LIGHT_YELLOW : Constants.LIGHT_OFF;
     };
 
     const getBerlinTime = () => {
