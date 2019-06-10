@@ -8,6 +8,13 @@ const ClockPresenter = (_view, _model) => {
         return !/^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(time);
     };
 
+    const secondsLamp = () => {
+        const digitalTime = digitalTimeModel.getTime();
+        const seconds = digitalTime.split(':')[2];
+        
+        return seconds % 2 === 0 ? Constants.LIGHT_YELLOW : '';
+    };
+
     const getBerlinTime = () => {
         const digitalTime = digitalTimeModel.getTime();
         if(isInValidTime(digitalTime)){
@@ -17,7 +24,8 @@ const ClockPresenter = (_view, _model) => {
     };
 
     return {
-        getBerlinTime
+        getBerlinTime,
+        secondsLamp
     };
 };
 
