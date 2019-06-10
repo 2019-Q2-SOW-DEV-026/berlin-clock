@@ -84,7 +84,11 @@ const ClockPresenter = (_view, _model) => {
         if(isInValidTime(digitalTime)){
             return clockView.setErrorMessage(Constants.ERROR_MESSAGE);
         }
-        return '';
+        return secondsLamp() +
+            fiveHoursRow() +
+            singleHoursRow() +
+            fiveMinutesRow() +
+            singleMinutesRow();
     };
 
     return {
