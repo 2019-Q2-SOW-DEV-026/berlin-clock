@@ -9,9 +9,6 @@ describe('Berlin Clock View', () => {
 
     it('Should display an error message in case of an exception', () => {
         const clockView = ClockView(document.body);
-        var div = document.createElement('div');
-        div.setAttribute('id', 'berlinClock');
-        document.body.appendChild(div);
 
         clockView.setErrorMessage('Error Message');
 
