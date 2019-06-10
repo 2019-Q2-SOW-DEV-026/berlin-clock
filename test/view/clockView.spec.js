@@ -14,4 +14,10 @@ describe('Berlin Clock View', () => {
 
         expect(document.getElementById('berlinClock').innerHTML).eql('Error Message');
     });
+
+    it('Should display seconds lamp', () => {
+        const clockView = ClockView(document.body);
+
+        expect(document.getElementById('secondsLamp')).to.not.be.null;;
+    });
 });

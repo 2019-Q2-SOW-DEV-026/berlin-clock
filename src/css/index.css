@@ -8,3 +8,24 @@ body {
   height: 100%;
   width: 100%;
 }
+
+#container {
+  display: table-cell;
+  vertical-align: middle;
+  min-width: 500px;
+}
+
+#berlinClock {
+  font-size: 0;
+}
+
+.light {
+  display: inline-block;
+  margin: 8px 4px;
+}
+
+#secondsLamp .light {
+  height: 96px;
+  width: 96px;
+  border-radius: 48px;
+}
