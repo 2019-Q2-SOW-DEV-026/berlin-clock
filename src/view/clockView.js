@@ -38,11 +38,11 @@ const ClockView = (container) => {
     };
 
     return {
-        setErrorMessage: (errorMessage) => {
+        showErrorMessage: (errorMessage) => {
             document.getElementById('berlinClock').innerHTML = errorMessage;
         },
 
-        setBerlinTime: (berlinTime) => {
+        showBerlinTime: (berlinTime) => {
             let light = document.querySelectorAll('#secondsLamp .light')[0];
 
             if(berlinTime[0] === Constants.LIGHT_YELLOW){

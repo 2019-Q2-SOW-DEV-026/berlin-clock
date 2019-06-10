@@ -82,7 +82,7 @@ const ClockPresenter = (_view, _model) => {
     const getBerlinTime = () => {
         const digitalTime = digitalTimeModel.getTime();
         if(isInValidTime(digitalTime)){
-            return clockView.setErrorMessage(Constants.ERROR_MESSAGE);
+            return clockView.showErrorMessage(Constants.ERROR_MESSAGE);
         }
         return secondsLamp() +
             fiveHoursRow() +

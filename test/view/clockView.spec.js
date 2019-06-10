@@ -14,7 +14,7 @@ describe('Berlin Clock View', () => {
     });
 
     it('Should display an error message in case of an exception', () => {
-        clockView.setErrorMessage('Error Message');
+        clockView.showErrorMessage('Error Message');
 
         expect(document.getElementById('berlinClock').innerHTML).eql('Error Message');
     });
@@ -25,14 +25,14 @@ describe('Berlin Clock View', () => {
         });
     
         it('Should turn on during even seconds', () => {
-            clockView.setBerlinTime('YOOOOOOOOOOOOOOOOOOOOOOO');
+            clockView.showBerlinTime('YOOOOOOOOOOOOOOOOOOOOOOO');
     
             let secondsLamp = document.querySelectorAll('#secondsLamp .light')[0];
             expect(secondsLamp.classList.contains('on')).to.be.true;
         });
     
         it('Should turn off during odd seconds', () => {
-            clockView.setBerlinTime('OOOOOOOOOOOOOOOOOOOOOOOO');
+            clockView.showBerlinTime('OOOOOOOOOOOOOOOOOOOOOOOO');
     
             let secondsLamp = document.querySelectorAll('#secondsLamp .light')[0];
             expect(secondsLamp.classList.contains('off')).to.be.true;
@@ -45,14 +45,14 @@ describe('Berlin Clock View', () => {
         });
     
         it('Should turn on its respective lamp if its Berlin Clock color status is R', () => {
-            clockView.setBerlinTime('OROOOOOOOOOOOOOOOOOOOOOO');
+            clockView.showBerlinTime('OROOOOOOOOOOOOOOOOOOOOOO');
     
             let secondsLamp = document.querySelectorAll('#fiveHourRow .light')[0];
             expect(secondsLamp.classList.contains('on')).to.be.true;
         });
     
         it('Should turn off its respective lamp if its Berlin Clock color status is O', () => {
-            clockView.setBerlinTime('OOOOOOOOOOOOOOOOOOOOOOOO');
+            clockView.showBerlinTime('OOOOOOOOOOOOOOOOOOOOOOOO');
     
             let secondsLamp = document.querySelectorAll('#fiveHourRow .light')[0];
             expect(secondsLamp.classList.contains('off')).to.be.true;

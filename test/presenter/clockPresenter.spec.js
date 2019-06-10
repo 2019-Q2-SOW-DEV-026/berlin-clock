@@ -9,7 +9,7 @@ describe('Berlin Clock', () => {
 
         const spyView = () => {
             return {
-                setErrorMessage: (errorMessage) => {
+                showErrorMessage: (errorMessage) => {
                     isErrorMessage = true;
                 }
             };
@@ -196,6 +196,12 @@ describe('Berlin Clock', () => {
         initClockFor('00:00:00');
 
         expect(clock.getBerlinTime()).to.equal('YOOOOOOOOOOOOOOOOOOOOOOO');
+    });
+
+    it("Should return 'ORRRRRRROYYRYYRYYRYYYYYY' for '23:59:59' digital time", function() {
+        initClockFor('23:59:59');
+        
+        expect(clock.getBerlinTime()).to.equal('ORRRRRRROYYRYYRYYRYYYYYY');
     });
 
     it("Should return 'ORRRRRRROYYRYYRYYRYYYYYY' for '23:59:59' digital time", function() {
