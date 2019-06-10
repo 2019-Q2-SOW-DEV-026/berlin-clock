@@ -19,6 +19,12 @@ describe('Berlin Clock View', () => {
         expect(document.getElementById('berlinClock').innerHTML).eql('Error Message');
     });
 
+    it('Should display digital time', () => {
+        clockView.showDigitalTime('11:23:34');
+
+        expect(document.getElementById('digitalClock').innerHTML).eql('11:23:34');
+    });
+
     describe('Seconds Lamp', () => {
         it('Should be displayed', () => {
             expect(document.getElementById('secondsLamp')).to.not.be.null;

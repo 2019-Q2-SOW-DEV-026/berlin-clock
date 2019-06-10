@@ -34,5 +34,6 @@ export default () => {
                     <div class="light"></div>
                     <div class="light"></div>
                 </div>
-            </div>`;
+            </div>
+            <div id="digitalClock"></div>`;
 };

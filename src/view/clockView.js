@@ -55,7 +55,7 @@ const ClockView = (container) => {
         },
 
         showDigitalTime: (digitalTime) => {
-            
+            document.getElementById('digitalClock').innerHTML = digitalTime;
         }
     };
 };
