@@ -184,5 +184,11 @@ describe('Berlin Clock', () => {
 
             expect(clock.singleMinutesRow()).to.equal('YYYO');
         });
+
+        it("Should return 'YYYY' for '04' minutes", function() {
+            initClockFor('00:04:00');
+
+            expect(clock.singleMinutesRow()).to.equal('YYYY');
+        });
     });
 }); 
