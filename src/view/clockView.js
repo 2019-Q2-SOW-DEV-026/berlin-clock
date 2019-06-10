@@ -43,20 +43,13 @@ const ClockView = (container) => {
         },
 
         showBerlinTime: (berlinTime) => {
-            let light = document.querySelectorAll('#secondsLamp .light')[0];
-
-            if(berlinTime[0] === Constants.LIGHT_YELLOW){
-                toggleLight(light, 'on');
-            }else{
-                toggleLight(light, 'off');
-            }
-
-            for (let fiveHourRowIndex = 0; fiveHourRowIndex < 4; fiveHourRowIndex ++) {
-                let light = document.querySelectorAll('#fiveHourRow .light')[fiveHourRowIndex];
-                if (berlinTime[fiveHourRowIndex + 1] === Constants.LIGHT_RED) {
-                    toggleLight(light, 'on');
-                }else if (berlinTime[fiveHourRowIndex + 1] === Constants.LIGHT_OFF) {
-                    toggleLight(light, 'off');
+            let lights = document.querySelectorAll('.light');
+    
+            for (let berlinClockIndex = 0; berlinClockIndex < lights.length; berlinClockIndex += 1) {
+                if (berlinTime[berlinClockIndex] === Constants.LIGHT_YELLOW || berlinTime[berlinClockIndex] === Constants.LIGHT_RED) {
+                    toggleLight(lights[berlinClockIndex], 'on');
+                } else if (berlinTime[berlinClockIndex] === Constants.LIGHT_OFF) {
+                    toggleLight(lights[berlinClockIndex], 'off');
                 }
             }
         },
