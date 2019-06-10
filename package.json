@@ -1,0 +1,35 @@
+{
+  "name": "berlinclock",
+  "version": "1.0.0",
+  "description": "KATA on berlin clock",
+  "scripts": {
+    "test": "mocha --require babel-core/register ./test/**/*.spec.js",
+    "build": "webpack --mode development",
+    "start": "npm run build; webpack-dev-server --open --mode development",
+    "lint": "eslint src/*.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "6.3.13",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.3",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+    "clean-webpack-plugin": "^0.1.18",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.0.6",
+    "mocha": "^6.0.2",
+    "mocha-jsdom": "^2.0.0",
+    "style-loader": "^0.20.2",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "4.19.1",
+    "webpack-cli": "^2.0.9",
+    "webpack-dev-server": "^3.1.0"
+  }
+}
