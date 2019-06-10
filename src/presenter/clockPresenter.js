@@ -7,12 +7,21 @@ const ClockPresenter = (_view, _model) => {
     const isInValidTime = (time) => {
         return !/^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(time);
     };
+    
+    const isLightTurnedOn = (lampIndex, lampsToBeTurnedOn) => {
+        return lampIndex <= lampsToBeTurnedOn;
+    };
 
     const fiveHoursRow = () => {
         const digitalTime = digitalTimeModel.getTime();
         const hours = digitalTime.split(':')[0];
 
-        return hours === '05' ? 'ROOO' : 'OOOO';
+        let lampsToBeTurnedOn = Math.floor(hours / 5);
+        let lamps = "";
+        for (let lampIndex = 1; lampIndex <= Constants.TOTAL_FIVE_HOURS_LAMPS; lampIndex++) {
+            lamps += isLightTurnedOn(lampIndex, lampsToBeTurnedOn) ? Constants.LIGHT_RED : Constants.LIGHT_OFF;
+        }
+        return lamps;
     };
 
     const secondsLamp = () => {
