@@ -16,6 +16,10 @@ The next two rows represent hours. The upper row represents 5 hour blocks and is
 
 The final two rows represent the minutes. The upper row represents 5 minute blocks, and is made up of 11 lamps- every third lamp is red, the rest are yellow. The bottom row represents 1 minute blocks, and is made up of 4 yellow lamps.
 
+## Assumptions
+
+The Time set as an arguement is received from system time. So empty and null cases are not unit tested, as its not expected from the system.
+
 ## Get Started
 
 ### `npm install`
