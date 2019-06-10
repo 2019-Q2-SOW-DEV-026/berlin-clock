@@ -33,3 +33,7 @@ body {
 #secondsLamp .light.on {
   background-color: #ff3;
 }
+
+#secondsLamp .light.off {
+  background-color: #663;
+}

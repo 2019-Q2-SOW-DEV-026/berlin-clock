@@ -17,15 +17,30 @@ const ClockView = (container) => {
             el.className += " " + className;
     };
 
+    const removeClass = (el, className) => {
+        if (el.classList)
+            el.classList.remove(className);
+        else if (hasClass(el, className))
+        {
+            var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+            el.className = el.className.replace(reg, ' ');
+        }
+    };
+
     return {
         setErrorMessage: (errorMessage) => {
             document.getElementById('berlinClock').innerHTML = errorMessage;
         },
 
         setBerlinTime: (berlinTime) => {
+            let light = document.querySelectorAll('#secondsLamp .light')[0];
+
             if(berlinTime[0] === Constants.LIGHT_YELLOW){
-                let light = document.querySelectorAll('#secondsLamp .light')[0];
+                removeClass(light, 'off');
                 addClass(light, 'on');
+            }else{
+                removeClass(light, 'on');
+                addClass(light, 'off');
             }
         },
     };

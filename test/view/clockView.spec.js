@@ -29,4 +29,11 @@ describe('Berlin Clock View', () => {
         let secondsLamp = document.querySelectorAll('#secondsLamp .light')[0];
         expect(secondsLamp.classList.contains('on')).to.be.true;
     });
+
+    it('Should turn off seconds lamp during odd seconds', () => {
+        clockView.setBerlinTime('OOOOOOOOOOOOOOOOOOOOOOOO');
+
+        let secondsLamp = document.querySelectorAll('#secondsLamp .light')[0];
+        expect(secondsLamp.classList.contains('off')).to.be.true;
+    });
 });
