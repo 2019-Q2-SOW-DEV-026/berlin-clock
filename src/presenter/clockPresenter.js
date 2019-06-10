@@ -8,6 +8,10 @@ const ClockPresenter = (_view, _model) => {
         return number % 2 === 0;
     };
 
+    const isMultipleOf3 = (number) => {
+        return number % 3 === 0;
+    };
+
     const isInValidTime = (time) => {
         return !/^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(time);
     };
@@ -19,7 +23,7 @@ const ClockPresenter = (_view, _model) => {
     const getLampsStatus = (lampsToBeTurnedOn, totalLampsInRow, color) => {
         let lamps = "";
         for (let lampIndex = 1; lampIndex <= totalLampsInRow; lampIndex++) {
-            lamps += isLightTurnedOn(lampIndex, lampsToBeTurnedOn) ? color() : Constants.LIGHT_OFF;
+            lamps += isLightTurnedOn(lampIndex, lampsToBeTurnedOn) ? color(lampIndex) : Constants.LIGHT_OFF;
         }
         return lamps;
     };
@@ -29,7 +33,8 @@ const ClockPresenter = (_view, _model) => {
         const minutes = digitalTime.split(':')[1];
         const lampsToBeTurnedOn = Math.floor(minutes / 5);
 
-        return getLampsStatus(lampsToBeTurnedOn, Constants.TOTAL_FIVE_MINUTES_LIGHTS, () => Constants.LIGHT_YELLOW);
+        return getLampsStatus(lampsToBeTurnedOn, Constants.TOTAL_FIVE_MINUTES_LIGHTS,
+            (lampIndex) => isMultipleOf3(lampIndex) ? Constants.LIGHT_RED : Constants.LIGHT_YELLOW);
     };
 
     const singleHoursRow = () => {
