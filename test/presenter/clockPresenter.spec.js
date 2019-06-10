@@ -27,6 +27,14 @@ describe('Berlin Clock', () => {
 
     it('Should throw an error when an invalid second is passed', () => {
         getClockFor('23:00:70');
+
+        clock.getBerlinTime();
+
+        expect(isErrorMessage).to.be.true;
+    });
+
+    it('Should throw an error when an invalid minute is passed', () => {
+        getClockFor('23:70:00');
         
         clock.getBerlinTime();
 

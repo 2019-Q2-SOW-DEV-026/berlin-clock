@@ -6,8 +6,10 @@ const ClockPresenter = (_view, _model) => {
 
     const isInValidTime = (time) => {
         const seconds = time.split(':')[2];
-    
-        return !/^([0-5][0-9])?$/.test(seconds);
+        const minutes = time.split(':')[1];
+
+        return  !/^([0-5][0-9])?$/.test(seconds) ||
+                !/^([0-5][0-9])?$/.test(minutes);
     };
 
     const getBerlinTime = () => {
