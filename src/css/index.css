@@ -30,33 +30,54 @@ body {
   border-radius: 48px;
 }
 
-#secondsLamp .light.on {
+#secondsLamp .light.on,
+#fiveMinuteRow .light.on:not(:nth-child(3n + 3)),
+#singleMinuteRow .light.on {
   background-color: #ff3;
 }
 
-#secondsLamp .light.off {
+#secondsLamp .light.off,
+#fiveMinuteRow .light.off:not(:nth-child(3n + 3)),
+#singleMinuteRow .light.off {
   background-color: #663;
 }
 
-#fiveHourRow .light {
+#fiveHourRow .light,
+#singleHourRow .light,
+#singleMinuteRow .light {
   height: 64px;
   width: 102px;
 }
 
-#fiveHourRow :first-child {
+#fiveMinuteRow .light {
+  height: 64px;
+  width: 32px;
+}
+
+#fiveHourRow :first-child,
+#singleHourRow :first-child,
+#fiveMinuteRow :first-child,
+#singleMinuteRow :first-child {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
 
-#fiveHourRow :last-child {
+#fiveHourRow :last-child,
+#singleHourRow :last-child,
+#fiveMinuteRow :last-child,
+#singleMinuteRow :last-child {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
 }
 
-#fiveHourRow .light.on {
+#fiveHourRow .light.on,
+#singleHourRow .light.on,
+#fiveMinuteRow .light.on:nth-child(3n + 3) {
   background-color: #f33;
 }
 
-#fiveHourRow .light.off {
+#fiveHourRow .light.off,
+#singleHourRow .light.off,
+#fiveMinuteRow .light.off:nth-child(3n + 3) {
   background-color: #633;
 }
