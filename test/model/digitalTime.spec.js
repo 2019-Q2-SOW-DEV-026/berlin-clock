@@ -14,7 +14,7 @@ describe('Digital Time Model', () => {
         date.setHours(20);
         date.setSeconds(40);
 
-        const digitalTime = DigitalTime(date).getTime();
+        const digitalTime = DigitalTime().getTime(date);
 
         expect(digitalTime).to.equal('20:01:40');
     });

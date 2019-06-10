@@ -1,4 +1,4 @@
-const DigitalTime = (date = new Date()) => {
+const DigitalTime = () => {
 
     const prependZero = (number) => {
         if (number < 10) {
@@ -7,14 +7,13 @@ const DigitalTime = (date = new Date()) => {
         return number;
     };
 
-    const hour = prependZero(date.getHours());
-    const minute = prependZero(date.getMinutes());
-    const second = prependZero(date.getSeconds());
-    const time = hour + ":" + minute + ":" + second;
-
     return {
-        getTime: () => {
-            return time;
+        getTime: (date = new Date()) => {
+            const hour = prependZero(date.getHours());
+            const minute = prependZero(date.getMinutes());
+            const second = prependZero(date.getSeconds());
+
+            return hour + ":" + minute + ":" + second;
         },
         prependZero
     };
