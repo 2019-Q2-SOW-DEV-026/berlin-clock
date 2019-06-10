@@ -40,4 +40,12 @@ describe('Berlin Clock', () => {
 
         expect(isErrorMessage).to.be.true;
     });
+
+    it('Should throw an error when an invalid hours is passed', () => {
+        getClockFor('25:00:00');
+        
+        clock.getBerlinTime();
+
+        expect(isErrorMessage).to.be.true;
+    });
 }); 
