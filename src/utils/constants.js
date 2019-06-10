@@ -5,6 +5,7 @@ const Constants = {
     TOTAL_FIVE_HOURS_LAMPS: 4,
     TOTAL_SINGLE_HOURS_LAMPS: 4,
     TOTAL_FIVE_MINUTES_LAMPS: 11,
+    TOTAL_SINGLE_MINUTES_LAMPS: 4,
     ERROR_MESSAGE: 'Entered Time is Invalid. Please check and try again'
 };
 

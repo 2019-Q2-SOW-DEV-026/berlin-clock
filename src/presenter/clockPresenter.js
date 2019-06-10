@@ -31,8 +31,12 @@ const ClockPresenter = (_view, _model) => {
     const singleMinutesRow = () => {
         const digitalTime = digitalTimeModel.getTime();
         const minutes = digitalTime.split(':')[1];
+        const lampsToBeTurnedOn = minutes % 5;
 
-        return minutes === '01' ? 'YOOO' : 'OOOO'; 
+        return getLampsStatus(
+            lampsToBeTurnedOn, 
+            Constants.TOTAL_SINGLE_MINUTES_LAMPS,
+            () => Constants.LIGHT_YELLOW);
     };
 
     const fiveMinutesRow = () => {
