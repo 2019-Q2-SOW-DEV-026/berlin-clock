@@ -28,8 +28,11 @@ const ClockPresenter = (_view, _model) => {
         return lamps;
     };
 
-    const singleMinutesRow = (minutes) => {
-        return 'OOOO'; 
+    const singleMinutesRow = () => {
+        const digitalTime = digitalTimeModel.getTime();
+        const minutes = digitalTime.split(':')[1];
+
+        return minutes === '01' ? 'YOOO' : 'OOOO'; 
     };
 
     const fiveMinutesRow = () => {
