@@ -152,5 +152,11 @@ describe('Berlin Clock', () => {
 
             expect(clock.fiveMinutesRow()).to.equal('YYROOOOOOOO');
         });
+
+        it("Should return 'YYRYYRYOOOO' for '35' minutes", function() {
+            initClockFor('00:35:00');
+
+            expect(clock.fiveMinutesRow()).to.equal('YYRYYRYOOOO');
+        });
     });
 }); 
