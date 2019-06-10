@@ -27,6 +27,16 @@ const ClockView = (container) => {
         }
     };
 
+    const toggleLight = (light, lightSwitch) => {
+        if(lightSwitch === 'on'){
+            removeClass(light, 'off');
+            addClass(light, 'on');
+        }else{
+            removeClass(light, 'on');
+            addClass(light, 'off');
+        }
+    };
+
     return {
         setErrorMessage: (errorMessage) => {
             document.getElementById('berlinClock').innerHTML = errorMessage;
@@ -36,21 +46,17 @@ const ClockView = (container) => {
             let light = document.querySelectorAll('#secondsLamp .light')[0];
 
             if(berlinTime[0] === Constants.LIGHT_YELLOW){
-                removeClass(light, 'off');
-                addClass(light, 'on');
+                toggleLight(light, 'on');
             }else{
-                removeClass(light, 'on');
-                addClass(light, 'off');
+                toggleLight(light, 'off');
             }
 
             for (let fiveHourRowIndex = 0; fiveHourRowIndex < 4; fiveHourRowIndex ++) {
                 let light = document.querySelectorAll('#fiveHourRow .light')[fiveHourRowIndex];
                 if (berlinTime[fiveHourRowIndex + 1] === Constants.LIGHT_RED) {
-                    removeClass(light, 'off');
-                    addClass(light, 'on');
+                    toggleLight(light, 'on');
                 }else if (berlinTime[fiveHourRowIndex + 1] === Constants.LIGHT_OFF) {
-                    removeClass(light, 'on');
-                    addClass(light, 'off');
+                    toggleLight(light, 'off');
                 }
             }
         },
