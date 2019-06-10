@@ -2,8 +2,11 @@ import { expect } from 'chai';
 import Clock from '../../src/presenter/clockPresenter';
 
 describe('Berlin Clock', () => {
-    it('Should throw an error when an invalid second is passed', () => {
-        let isErrorMessage = false;
+    let clock, isErrorMessage;
+
+    const getClockFor = (time) => {
+        isErrorMessage = false;
+
         const spyView = () => {
             return {
                 setErrorMessage: (errorMessage) => {
@@ -14,12 +17,17 @@ describe('Berlin Clock', () => {
         const mockModel = () => {
             return {
                 getTime: () => {
-                    return '23:00:70';
+                    return time;
                 }
             };
         };
-        const clock = Clock(spyView(), mockModel());
+        clock = Clock(spyView(), mockModel());
+    };
+        
 
+    it('Should throw an error when an invalid second is passed', () => {
+        getClockFor('23:00:70');
+        
         clock.getBerlinTime();
 
         expect(isErrorMessage).to.be.true;
