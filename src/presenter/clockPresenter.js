@@ -33,7 +33,7 @@ const ClockPresenter = (_view, _model) => {
         const minutes = digitalTime.split(':')[1];
         const lampsToBeTurnedOn = Math.floor(minutes / 5);
 
-        return getLampsStatus(lampsToBeTurnedOn, Constants.TOTAL_FIVE_MINUTES_LIGHTS,
+        return getLampsStatus(lampsToBeTurnedOn, Constants.TOTAL_FIVE_MINUTES_LAMPS,
             (lampIndex) => isMultipleOf3(lampIndex) ? Constants.LIGHT_RED : Constants.LIGHT_YELLOW);
     };
 
