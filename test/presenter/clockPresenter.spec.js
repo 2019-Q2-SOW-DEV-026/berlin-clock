@@ -120,5 +120,11 @@ describe('Berlin Clock', () => {
 
             expect(clock.singleHoursRow()).to.equal('RRRO');
         });
+
+        it("Should return 'RRRR' for '04' hours", function() {
+            initClockFor('04:00:00');
+
+            expect(clock.singleHoursRow()).to.equal('RRRR');
+        });
     });
 }); 
