@@ -4,27 +4,12 @@ import Constants from '../utils/constants';
 const ClockView = (container) => {
     container.innerHTML = clockTemplate();
 
-    const hasClass = (el, className) => {
-        if (el.classList)
-            return el.classList.contains(className);
-        return el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
-    };
-
     const addClass = (el, className) => {
-        if (el.classList)
-            el.classList.add(className);
-        else if (!hasClass(el, className))
-            el.className += " " + className;
+        el.classList.add(className);
     };
 
     const removeClass = (el, className) => {
-        if (el.classList)
-            el.classList.remove(className);
-        else if (hasClass(el, className))
-        {
-            var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
-            el.className = el.className.replace(reg, ' ');
-        }
+        el.classList.remove(className);
     };
 
     const toggleLight = (light, lightSwitch) => {
