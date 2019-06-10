@@ -24,6 +24,10 @@ const ClockPresenter = (_view, _model) => {
         return lamps;
     };
 
+    const fiveMinutesRow = () => {
+        return 'OOOOOOOOOOO';
+    };
+
     const singleHoursRow = () => {
         const digitalTime = digitalTimeModel.getTime();
         const hours = digitalTime.split(':')[0];
@@ -59,7 +63,8 @@ const ClockPresenter = (_view, _model) => {
         getBerlinTime,
         secondsLamp,
         fiveHoursRow,
-        singleHoursRow
+        singleHoursRow,
+        fiveMinutesRow
     };
 };
 
