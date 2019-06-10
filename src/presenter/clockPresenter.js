@@ -25,7 +25,10 @@ const ClockPresenter = (_view, _model) => {
     };
 
     const fiveMinutesRow = () => {
-        return 'OOOOOOOOOOO';
+        const digitalTime = digitalTimeModel.getTime();
+        const minutes = digitalTime.split(':')[1];
+
+        return minutes === '05' ? 'YOOOOOOOOOO' : 'OOOOOOOOOOO';
     };
 
     const singleHoursRow = () => {
