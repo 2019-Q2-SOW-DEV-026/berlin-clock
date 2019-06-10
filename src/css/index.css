@@ -9,10 +9,23 @@ body {
   width: 100%;
 }
 
+body {
+  background-color: black;
+  display: table;
+  text-align: center;
+}
+
 #container {
   display: table-cell;
   vertical-align: middle;
   min-width: 500px;
+}
+
+#digitalClock {
+  color: white;
+  font-size: 60px;
+  letter-spacing: 7px;
+  font-family: fantasy;
 }
 
 #berlinClock {
