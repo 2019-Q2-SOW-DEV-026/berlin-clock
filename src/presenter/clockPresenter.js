@@ -7,9 +7,13 @@ const ClockPresenter = (_view, _model) => {
     const isInValidTime = (time) => {
         return !/^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(time);
     };
-    
+
     const isLightTurnedOn = (lampIndex, lampsToBeTurnedOn) => {
         return lampIndex <= lampsToBeTurnedOn;
+    };
+
+    const singleHoursRow = () => {
+        return 'OOOO';
     };
 
     const fiveHoursRow = () => {
@@ -42,7 +46,8 @@ const ClockPresenter = (_view, _model) => {
     return {
         getBerlinTime,
         secondsLamp,
-        fiveHoursRow
+        fiveHoursRow,
+        singleHoursRow
     };
 };
 
