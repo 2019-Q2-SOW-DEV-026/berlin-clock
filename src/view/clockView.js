@@ -53,6 +53,10 @@ const ClockView = (container) => {
                 }
             }
         },
+
+        showDigitalTime: (digitalTime) => {
+            
+        }
     };
 };
 

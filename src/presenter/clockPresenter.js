@@ -79,8 +79,7 @@ const ClockPresenter = (_view, _model) => {
         return isEven(seconds) ? Constants.LIGHT_YELLOW : Constants.LIGHT_OFF;
     };
 
-    const getBerlinTime = () => {
-        const digitalTime = digitalTimeModel.getTime();
+    const getBerlinTime = (digitalTime = digitalTimeModel.getTime()) => {
         if(isInValidTime(digitalTime)){
             return clockView.showErrorMessage(Constants.ERROR_MESSAGE);
         }
@@ -99,7 +98,10 @@ const ClockPresenter = (_view, _model) => {
         fiveMinutesRow,
         singleMinutesRow,
         showTime: () => {
-            clockView.showBerlinTime(getBerlinTime());
+            const digitalTime = digitalTimeModel.getTime();
+
+            clockView.showBerlinTime(getBerlinTime(digitalTime));
+            clockView.showDigitalTime(digitalTime);
         }
     };
 };
