@@ -9,7 +9,10 @@ const ClockPresenter = (_view, _model) => {
     };
 
     const fiveHoursRow = () => {
-        return 'OOOO';
+        const digitalTime = digitalTimeModel.getTime();
+        const hours = digitalTime.split(':')[0];
+
+        return hours === '05' ? 'ROOO' : 'OOOO';
     };
 
     const secondsLamp = () => {
