@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import Clock from '../../src/presenter/clockPresenter';
 
 describe('Berlin Clock', () => {
-    let clock, isErrorMessage;
+    let clock, isErrorMessage, berlinTime;
 
     const initClockFor = (time) => {
         isErrorMessage = false;
@@ -11,6 +11,9 @@ describe('Berlin Clock', () => {
             return {
                 showErrorMessage: (errorMessage) => {
                     isErrorMessage = true;
+                },
+                showBerlinTime: (time) => {
+                    berlinTime = time;
                 }
             };
         };
@@ -204,9 +207,11 @@ describe('Berlin Clock', () => {
         expect(clock.getBerlinTime()).to.equal('ORRRRRRROYYRYYRYYRYYYYYY');
     });
 
-    it("Should return 'ORRRRRRROYYRYYRYYRYYYYYY' for '23:59:59' digital time", function() {
+    it("Should call view.setBerlinTime on calling showTime", function() {
         initClockFor('23:59:59');
-        
-        expect(clock.getBerlinTime()).to.equal('ORRRRRRROYYRYYRYYRYYYYYY');
+
+        clock.showTime();
+
+        expect(berlinTime).to.equal('ORRRRRRROYYRYYRYYRYYYYYY');
     });
 }); 

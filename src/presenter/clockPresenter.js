@@ -97,7 +97,10 @@ const ClockPresenter = (_view, _model) => {
         fiveHoursRow,
         singleHoursRow,
         fiveMinutesRow,
-        singleMinutesRow
+        singleMinutesRow,
+        showTime: () => {
+            clockView.showBerlinTime(getBerlinTime());
+        }
     };
 };
 
