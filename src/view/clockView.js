@@ -42,6 +42,14 @@ const ClockView = (container) => {
                 removeClass(light, 'on');
                 addClass(light, 'off');
             }
+
+            for (let fiveHourRowIndex = 0; fiveHourRowIndex < 4; fiveHourRowIndex ++) {
+                let light = document.querySelectorAll('#fiveHourRow .light')[fiveHourRowIndex];
+                if (berlinTime[fiveHourRowIndex + 1] === Constants.LIGHT_RED) {
+                    removeClass(light, 'off');
+                    addClass(light, 'on');
+                }
+            }
         },
     };
 };

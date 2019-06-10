@@ -40,4 +40,11 @@ describe('Berlin Clock View', () => {
     it('Should display five hours row with 4 lamps', () => {
         expect(document.querySelectorAll('#fiveHourRow .light').length).to.equal(4);
     });
+
+    it('Should turn on lamp in five hours row if its respective Berlin Clock color status is R', () => {
+        clockView.setBerlinTime('OROOOOOOOOOOOOOOOOOOOOOO');
+
+        let secondsLamp = document.querySelectorAll('#fiveHourRow .light')[0];
+        expect(secondsLamp.classList.contains('on')).to.be.true;
+    });
 });
