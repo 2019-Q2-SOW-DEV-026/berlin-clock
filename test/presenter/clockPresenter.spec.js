@@ -194,7 +194,13 @@ describe('Berlin Clock', () => {
 
     it("Should return 'YOOOOOOOOOOOOOOOOOOOOOOO' for '00:00:00' digital time", function() {
         initClockFor('00:00:00');
-        
+
         expect(clock.getBerlinTime()).to.equal('YOOOOOOOOOOOOOOOOOOOOOOO');
+    });
+
+    it("Should return 'ORRRRRRROYYRYYRYYRYYYYYY' for '23:59:59' digital time", function() {
+        initClockFor('23:59:59');
+        
+        expect(clock.getBerlinTime()).to.equal('ORRRRRRROYYRYYRYYRYYYYYY');
     });
 }); 
