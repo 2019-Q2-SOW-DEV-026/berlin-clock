@@ -11,8 +11,8 @@ const ClockPresenter = (_view, _model) => {
     const secondsLamp = () => {
         const digitalTime = digitalTimeModel.getTime();
         const seconds = digitalTime.split(':')[2];
-        
-        return seconds % 2 === 0 ? Constants.LIGHT_YELLOW : '';
+
+        return seconds % 2 === 0 ? Constants.LIGHT_YELLOW : Constants.LIGHT_OFF;
     };
 
     const getBerlinTime = () => {

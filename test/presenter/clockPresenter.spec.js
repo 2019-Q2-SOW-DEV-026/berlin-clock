@@ -56,5 +56,11 @@ describe('Berlin Clock', () => {
 
             expect(clock.secondsLamp()).to.equal('Y');
         });
+
+        it("Should return 'O' for odd seconds", function() {
+            initClockFor('00:00:59');
+
+            expect(clock.secondsLamp()).to.equal('O');
+        });
     });
 }); 
