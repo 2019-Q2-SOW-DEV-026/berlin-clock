@@ -16,7 +16,12 @@ const ClockPresenter = (_view, _model) => {
         const digitalTime = digitalTimeModel.getTime();
         const hours = digitalTime.split(':')[0];
 
-        return hours === '01' ? 'ROOO' : 'OOOO';
+        let lampsToBeTurnedOn = hours % 5;
+        let lamps = "";
+        for (let lampIndex = 1; lampIndex <= Constants.TOTAL_FIVE_HOURS_LAMPS; lampIndex++) {
+            lamps += isLightTurnedOn(lampIndex, lampsToBeTurnedOn) ? Constants.LIGHT_RED : Constants.LIGHT_OFF;
+        }
+        return lamps;
     };
 
     const fiveHoursRow = () => {
