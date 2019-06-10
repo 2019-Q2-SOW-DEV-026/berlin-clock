@@ -7,4 +7,15 @@ describe('Digital Time Model', () => {
         
         expect(number).to.equal('01');
     });
+
+    it('Should return the time in "HH:MM:SS" format', () => {
+        let date = new Date();
+        date.setMinutes(1);
+        date.setHours(20);
+        date.setSeconds(40);
+
+        const digitalTime = DigitalTime(date).getTime();
+
+        expect(digitalTime).to.equal('20:01:40');
+    });
 });

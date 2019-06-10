@@ -7,7 +7,10 @@ const DigitalTime = (date = new Date()) => {
         return number;
     };
 
-    const time = '22:03:40';
+    const hour = prependZero(date.getHours());
+    const minute = prependZero(date.getMinutes());
+    const second = prependZero(date.getSeconds());
+    const time = hour + ":" + minute + ":" + second;
 
     return {
         getTime: () => {
