@@ -12,16 +12,6 @@ const ClockView = (container) => {
         el.classList.remove(className);
     };
 
-    const toggleLight = (light, lightSwitch) => {
-        if(lightSwitch === 'on'){
-            removeClass(light, 'off');
-            addClass(light, 'on');
-        }else{
-            removeClass(light, 'on');
-            addClass(light, 'off');
-        }
-    };
-
     return {
         showErrorMessage: (errorMessage) => {
             document.getElementById('berlinClock').innerHTML = errorMessage;
