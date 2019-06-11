@@ -1,4 +1,5 @@
 import clockTemplate from '../templates/clock_template';
+import Constants from '../constants';
 
 const ClockView = (container) => {
     container.innerHTML = clockTemplate();
@@ -21,7 +22,7 @@ const ClockView = (container) => {
 
             removeClass(light, 'off');
             removeClass(light, 'on');
-            addClass(light, lightSwitch);
+            addClass(light, lightSwitch === Constants.TURN_ON_LIGHT ? 'on' : 'off');
         },
 
         showDigitalTime: (digitalTime) => {

@@ -97,9 +97,9 @@ const ClockPresenter = (_view, _model) => {
     const showBerlinTime = (berlinTime) => {
         for (let berlinTimeIndex = 0; berlinTimeIndex < berlinTime.length; berlinTimeIndex ++) {
             if (shouldTurnOnLight(berlinTime[berlinTimeIndex])) {
-                clockView.toggleLight(berlinTimeIndex, 'on');
+                clockView.toggleLight(berlinTimeIndex, Constants.TURN_ON_LIGHT);
             } else {
-                clockView.toggleLight(berlinTimeIndex, 'off');
+                clockView.toggleLight(berlinTimeIndex, Constants.TURN_OFF_LIGHT);
             }
         }
     };

@@ -1,4 +1,6 @@
 const Constants = {
+    TURN_ON_LIGHT: 'on',
+    TURN_OFF_LIGHT: 'off',
     LIGHT_YELLOW: 'Y',
     LIGHT_OFF: 'O',
     LIGHT_RED: 'R',
