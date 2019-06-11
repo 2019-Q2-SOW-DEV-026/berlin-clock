@@ -22,6 +22,10 @@ const ClockView = (container) => {
         }
     };
 
+    const isLightTurnedOn = (color) => {
+        return color === Constants.LIGHT_YELLOW || color === Constants.LIGHT_RED;
+    };
+
     return {
         showErrorMessage: (errorMessage) => {
             document.getElementById('berlinClock').innerHTML = errorMessage;
@@ -31,7 +35,7 @@ const ClockView = (container) => {
             let lights = document.querySelectorAll('.light');
     
             for (let berlinClockIndex = 0; berlinClockIndex < lights.length; berlinClockIndex += 1) {
-                if (berlinTime[berlinClockIndex] === Constants.LIGHT_YELLOW || berlinTime[berlinClockIndex] === Constants.LIGHT_RED) {
+                if (isLightTurnedOn(berlinTime[berlinClockIndex])) {
                     toggleLight(lights[berlinClockIndex], 'on');
                 } else if (berlinTime[berlinClockIndex] === Constants.LIGHT_OFF) {
                     toggleLight(lights[berlinClockIndex], 'off');
