@@ -44,4 +44,11 @@ describe('Berlin Clock View', () => {
     it('Single minutes row should display 4 lamps', () => {
         expect(document.querySelectorAll('#singleMinuteRow .light').length).to.equal(4);
     });
+
+    it('Should turn on seconds lamp on calling toggleLight with arguements lightIndex 0 and light Switch on', () => {
+        clockView.toggleLight(0, 'on');
+
+        let secondsLamp = document.querySelectorAll('#secondsLamp .light')[0];
+        expect(secondsLamp.classList.contains('on')).to.be.true;
+    });
 });
