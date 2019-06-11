@@ -1,5 +1,4 @@
 import clockTemplate from '../templates/clock_template';
-import Constants from '../constants';
 
 const ClockView = (container) => {
     container.innerHTML = clockTemplate();
