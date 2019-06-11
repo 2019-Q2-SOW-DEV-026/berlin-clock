@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import Clock from '../../src/presenter/clockPresenter';
 
 describe('Berlin Clock', () => {
-    let clock, isErrorMessage, berlinTime, digitalTime;
+    let clock, isErrorMessage, lightStatus, digitalTime;
 
     const initClockFor = (time) => {
         isErrorMessage = false;
@@ -12,8 +12,8 @@ describe('Berlin Clock', () => {
                 showErrorMessage: (errorMessage) => {
                     isErrorMessage = true;
                 },
-                showBerlinTime: (time) => {
-                    berlinTime = time;
+                toggleLight: (timeIndex, lightSwitch) => {
+                    lightStatus = lightSwitch;
                 },
                 showDigitalTime: (time) => {
                     digitalTime = time;
@@ -210,12 +210,12 @@ describe('Berlin Clock', () => {
         expect(clock.getBerlinTime()).to.equal('ORRRRRRROYYRYYRYYRYYYYYY');
     });
 
-    it("Should call view.setBerlinTime on calling showTime", function() {
+    it("Should call view.toggleLight with light status 'on' on calling showBerlinTime for berlinTime 'Y' ", function() {
         initClockFor('23:59:59');
 
-        clock.showTime();
+        clock.showBerlinTime('Y');
 
-        expect(berlinTime).to.equal('ORRRRRRROYYRYYRYYRYYYYYY');
+        expect(lightStatus).to.equal('on');
     });
 
     it("Should call view.setDigitalTime on calling showTime", function() {

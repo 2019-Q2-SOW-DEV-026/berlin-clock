@@ -90,6 +90,20 @@ const ClockPresenter = (_view, _model) => {
             singleMinutesRow();
     };
 
+    const shouldTurnOnLight = (color) => {
+        return color === Constants.LIGHT_YELLOW || color === Constants.LIGHT_RED;
+    };
+
+    const showBerlinTime = (berlinTime) => {
+        for (let berlinTimeIndex = 0; berlinTimeIndex < berlinTime.length; berlinTimeIndex ++) {
+            if (shouldTurnOnLight(berlinTime[berlinTimeIndex])) {
+                clockView.toggleLight(berlinTimeIndex, 'on');
+            } else {
+                clockView.toggleLight(berlinTimeIndex, 'off');
+            }
+        }
+    };
+
     return {
         getBerlinTime,
         secondsLamp,
@@ -97,10 +111,11 @@ const ClockPresenter = (_view, _model) => {
         singleHoursRow,
         fiveMinutesRow,
         singleMinutesRow,
+        showBerlinTime,
         showTime: () => {
             const digitalTime = digitalTimeModel.getTime();
 
-            clockView.showBerlinTime(getBerlinTime(digitalTime));
+            showBerlinTime(getBerlinTime(digitalTime));
             clockView.showDigitalTime(digitalTime);
         }
     };
