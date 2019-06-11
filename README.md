@@ -40,7 +40,7 @@ In order to run in different port please refer top answer from [stack overflow](
 
 ### `npm test`
 
-Launches the test runner and generates code coverage report under /coverage folder.<br>
+Launches the test runner<br>
 
 Testing framework used : [Mocha](https://mochajs.org)
 Mocha is a feature-rich JavaScript test framework running on Node.js, making asynchronous testing simple and fun.
