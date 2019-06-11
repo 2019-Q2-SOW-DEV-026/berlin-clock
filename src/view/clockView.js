@@ -34,7 +34,7 @@ const ClockView = (container) => {
         showBerlinTime: (berlinTime) => {
             let lights = document.querySelectorAll('.light');
     
-            for (let berlinClockIndex = 0; berlinClockIndex < lights.length; berlinClockIndex += 1) {
+            for (let berlinClockIndex = 0; berlinClockIndex < lights.length; berlinClockIndex ++) {
                 if (isLightTurnedOn(berlinTime[berlinClockIndex])) {
                     toggleLight(lights[berlinClockIndex], 'on');
                 } else if (berlinTime[berlinClockIndex] === Constants.LIGHT_OFF) {
