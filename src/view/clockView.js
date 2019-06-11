@@ -19,13 +19,9 @@ const ClockView = (container) => {
         toggleLight: (lightIndex, lightSwitch) => {
             let light = document.querySelectorAll('.light')[lightIndex];
 
-            if(lightSwitch === 'on'){
-                removeClass(light, 'off');
-                addClass(light, 'on');
-            }else{
-                removeClass(light, 'on');
-                addClass(light, 'off');
-            }
+            removeClass(light, 'off');
+            removeClass(light, 'on');
+            addClass(light, lightSwitch);
         },
 
         showDigitalTime: (digitalTime) => {
