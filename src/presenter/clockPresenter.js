@@ -1,4 +1,4 @@
-import Constants from '../utils/constants';
+import Constants from '../constants';
 
 const ClockPresenter = (_view, _model) => {
     const clockView = _view;
