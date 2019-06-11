@@ -30,6 +30,8 @@ The final two rows represent the minutes. The upper row represents 5 minute bloc
 
 Install all project dependencies
 
+If denied due to permission issue, execute `sudo npm install` (in macOS) or run as administrator in Windows.
+
 ### `npm start`
 
 Runs the app <br>
