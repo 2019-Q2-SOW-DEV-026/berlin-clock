@@ -51,4 +51,11 @@ describe('Berlin Clock View', () => {
         let secondsLamp = document.querySelectorAll('#secondsLamp .light')[0];
         expect(secondsLamp.classList.contains('on')).to.be.true;
     });
+
+    it('Should turn off seconds lamp on calling toggleLight with arguements lightIndex 0 and light Switch off', () => {
+        clockView.toggleLight(0, 'off');
+
+        let secondsLamp = document.querySelectorAll('#secondsLamp .light')[0];
+        expect(secondsLamp.classList.contains('off')).to.be.true;
+    });
 });
