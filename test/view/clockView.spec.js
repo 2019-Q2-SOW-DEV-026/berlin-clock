@@ -32,4 +32,16 @@ describe('Berlin Clock View', () => {
     it('Five hours row should display 4 lamps', () => {
         expect(document.querySelectorAll('#fiveHourRow .light').length).to.equal(4);
     });
+
+    it('Single hours row should display 4 lamps', () => {
+        expect(document.querySelectorAll('#singleHourRow .light').length).to.equal(4);
+    });
+
+    it('Five minutes row should display 11 lamps', () => {
+        expect(document.querySelectorAll('#fiveMinuteRow .light').length).to.equal(11);
+    });
+
+    it('Single minutes row should display 4 lamps', () => {
+        expect(document.querySelectorAll('#singleMinuteRow .light').length).to.equal(4);
+    });
 });
