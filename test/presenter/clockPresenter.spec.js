@@ -218,6 +218,14 @@ describe('Berlin Clock', () => {
         expect(lightStatus).to.equal('on');
     });
 
+    it("Should call view.toggleLight with light status 'off' on calling showBerlinTime for berlinTime 'N' ", function() {
+        initClockFor('23:59:59');
+
+        clock.showBerlinTime('N');
+
+        expect(lightStatus).to.equal('off');
+    });
+
     it("Should call view.setDigitalTime on calling showTime", function() {
         initClockFor('23:59:59');
 
