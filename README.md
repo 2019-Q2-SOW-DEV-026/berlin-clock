@@ -22,7 +22,7 @@ The final two rows represent the minutes. The upper row represents 5 minute bloc
 
 1. The Time set as an arguement is received from system time. So empty and null cases are not unit tested, as its not expected from the system.
 
-2. As mentioned in the above KATA requirement, presenter calculates berlinTime in this format 'ORRRRRRROYYRYYRYYRYYYYYY'. Because of this requirement, there was a need to write a logic in to turn on/off the light based on its respective color status.
+2. As mentioned in the above KATA requirement, presenter calculates berlinTime in this format 'ORRRRRRROYYRYYRYYRYYYYYY'. Because of this requirement, there was a need to write a logic to turn on/off the light based on its respective color status.
 
 ## Get Started
 
