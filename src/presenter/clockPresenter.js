@@ -8,8 +8,8 @@ const ClockPresenter = (_view, _model) => {
         return number % 2 === 0;
     };
 
-    const isMultipleOf3 = (number) => {
-        return number % 3 === 0;
+    const isThirdLamp = (lampNumber) => {
+        return lampNumber % 3 === 0;
     };
 
     const isInValidTime = (time) => {
@@ -47,7 +47,7 @@ const ClockPresenter = (_view, _model) => {
         return getLampsStatus(
             lampsToBeTurnedOn, 
             Constants.TOTAL_FIVE_MINUTES_LAMPS,
-            (lampIndex) => isMultipleOf3(lampIndex) ? Constants.LIGHT_RED : Constants.LIGHT_YELLOW);
+            (lampNumber) => isThirdLamp(lampNumber) ? Constants.LIGHT_RED : Constants.LIGHT_YELLOW);
     };
 
     const singleHoursRow = () => {
